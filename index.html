@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page by Robort</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="grid-box">
+
+        <div class="menu-box">
+            <div class="menu-title-box">
+                <i class='bx bx-left-arrow-circle'></i>
+                <p>Introduction to Python</p>
+            </div>
+
+        </div>
+
+        <div class="title-box">
+            <p class="ques">Which line of code creates an instance of the Person class?</p>
+            <p class="qnum">Question 1 of 5</p>
+        </div>
+
+        <div class="quiz-list-box">
+            <div class="item-box">
+                <div class="circle">
+                    <p>A</p>
+                </div>
+                <p>Person.create();</p>
+            </div>
+            <div class="item-box">
+                <div class="circle">
+                    <p>B</p>
+                </div>
+                <p>Person.extend();</p>
+
+            </div>
+            <div class="item-box">
+                <div class="circle">
+                    <p>C</p>
+                </div>
+                <p>Person.new();</p>
+
+            </div>
+            <div class="item-box">
+                <div class="circle">
+                    <p>D</p>
+                </div>
+                <p>Person.init();</p>
+
+            </div>
+
+        </div>
+        <div class="button-box">
+            <button class="submit">Submit Quiz</button>
+            <button class="skip"><i class='bx bx-skip-next-circle'></i> Skip Quiz</button>
+        </div>
+
+    </div>
+    <script>
+        var btns = document.getElementsByClassName("item-box");
+        for (var i = 0; i < btns.length; i++) {
+
+            btns[i].addEventListener("click", function () {
+
+                var current = document.getElementsByClassName("item-box-clicked");
+
+                // check and remove initial selection
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace("item-box-clicked", "");
+                }
+
+                // select new item
+                this.className += " item-box-clicked";
+            });
+        }
+    </script>
+</body>
+
+</html>
